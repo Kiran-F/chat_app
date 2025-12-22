@@ -1,0 +1,1 @@
+This app is a mern stack chat application.
