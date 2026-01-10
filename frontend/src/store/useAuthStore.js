@@ -35,6 +35,7 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: res.data });
       toast.success("Account created successfully");
       get().connectSocket();
+      window.location.href = '/home';
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -50,6 +51,7 @@ export const useAuthStore = create((set, get) => ({
       toast.success("Logged in successfully");
 
       get().connectSocket();
+      window.location.href = '/home';
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {

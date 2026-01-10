@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
-import { LogOut, MessageSquare, Settings, User } from "lucide-react";
+import { LogOut, MessageSquare, Settings, User, MessageCircle } from "lucide-react";
 
 const Navbar = () => {
   const { logout, authUser } = useAuthStore();
@@ -32,6 +32,16 @@ const Navbar = () => {
               <Settings className="w-4 h-4" />
               <span className="hidden sm:inline">Settings</span>
             </Link>
+
+            {authUser && (
+              <Link
+                to={"/home"}
+                className={`btn btn-sm gap-2 transition-colors`}
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span className="hidden sm:inline">Chat</span>
+              </Link>
+            )}
 
             {authUser && (
               <>
